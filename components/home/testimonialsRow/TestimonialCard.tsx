@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-
 import Card from "@/components/common/Card";
 
-export default function TestimonialCard() {
+interface ITestimonialCard {
+  objTestimonial: {};
+}
+
+export default function TestimonialCard(props: ITestimonialCard) {
   return (
     <Card>
       <figure className="flex flex-col items-center justify-center text-center bg-white">

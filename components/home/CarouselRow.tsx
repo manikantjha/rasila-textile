@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import ProductCard from "./productsRow/ProductCard";
+import { objProducts } from "@/data/data";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -109,9 +110,14 @@ export default function CarouselRow() {
     <div className="bg-gray-100 h-[65vh] md:h-[50vh] p-2 flex items-center justify-center">
       <div className="h-fit container mx-auto">
         <Slider {...settings}>
-          {[...Array(8)].map((item, index) => (
+          {[
+            ...objProducts.electricalContactBars,
+            ...objProducts.electroMechanicWarpStopMotions,
+            ...objProducts.serratedBars,
+            ...objProducts.dropPins,
+          ].map((item, index) => (
             <div key={index} className="h-full w-full px-2">
-              <ProductCard />
+              <ProductCard objProduct={item} />
             </div>
           ))}
         </Slider>
