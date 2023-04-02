@@ -11,6 +11,7 @@ export default function Layout(props: ILayout) {
     <>
       <Navbar />
       <>{props.children}</>
+
       <Footer />
     </>
   );

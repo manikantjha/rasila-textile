@@ -14,7 +14,7 @@ export default function RightColumn(props: IRightColumn) {
   }
   return (
     <div
-      className={`flex flex-col justify-center h-full ${
+      className={`grid grid-rows-[auto_1fr] h-full ${
         props.rightColumnContainerClassName
           ? props.rightColumnContainerClassName
           : ""

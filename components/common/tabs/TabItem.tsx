@@ -14,11 +14,11 @@ export default function TabItem(props: ITabItem) {
       onClick={() => props.setActiveTab(props.index)}
     >
       <span
-        className={`inline-block p-4 border-b-2 ${
+        className={`inline-block p-2 lg:p-4 border-b-2 ${
           props.index === props.activeTab
-            ? "border-blue-500"
+            ? "border-amber-500"
             : "border-transparent"
-        } rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300`}
+        } rounded-t-lg hover:text-gray-600 lg:hover:border-gray-300`}
       >
         {props.title}
       </span>

@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 shadow-md sticky top-0 left-0 right-0 z-[1000]">
         <div className="container grid grid-cols-[1fr_auto] items-center mx-auto">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center ml-2">
             <Logo />
           </Link>
           <div className="hidden w-full md:block md:w-auto">

@@ -11,7 +11,6 @@ export default function HomeMain() {
       <FeaturesRow />
       <FiguresRow />
       <TestimonialRow />
-      {/* <ProductsRow /> */}
       <ContactRow />
     </>
   );

@@ -59,7 +59,7 @@ export default function ProductCard(props: IProduct) {
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               {props.objProduct?.priceRange}
             </span>
-            <button className="text-white h-fit bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <button className="text-white h-fit bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-500 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-600 dark:focus:ring-amber-500">
               Get Latest Price
             </button>
           </div>

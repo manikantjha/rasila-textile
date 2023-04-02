@@ -9,6 +9,13 @@ export const lstNavBarMenu = [
   { id: 6, name: "Contact", path: "/contact" },
 ];
 
+export const lstProductTabs = [
+  "Electrical Contact Bar",
+  "Electro Mechanic Warp Stop Motion",
+  "Serrated Bars",
+  "Drop Pin",
+];
+
 export const objProducts = {
   electricalContactBars: [
     {
@@ -872,10 +879,11 @@ export const lstFeatures = [
     id: 1,
     icon: (
       <svg
-        className="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
+        style={{ width: "50px" }}
+        className="mb-2 text-gray-500 dark:text-gray-400"
       >
         <path d="M9.375 3a1.875 1.875 0 000 3.75h1.875v4.5H3.375A1.875 1.875 0 011.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0112 2.753a3.375 3.375 0 015.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 10-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3zM11.25 12.75H3v6.75a2.25 2.25 0 002.25 2.25h6v-9zM12.75 12.75v9h6.75a2.25 2.25 0 002.25-2.25v-6.75h-9z" />
       </svg>
@@ -891,7 +899,8 @@ export const lstFeatures = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400"
+        style={{ width: "50px" }}
+        className="mb-2 text-gray-500 dark:text-gray-400"
       >
         <path d="M11.25 3v4.046a3 3 0 00-4.277 4.204H1.5v-6A2.25 2.25 0 013.75 3h7.5zM12.75 3v4.011a3 3 0 014.239 4.239H22.5v-6A2.25 2.25 0 0020.25 3h-7.5zM22.5 12.75h-8.983a4.125 4.125 0 004.108 3.75.75.75 0 010 1.5 5.623 5.623 0 01-4.875-2.817V21h7.5a2.25 2.25 0 002.25-2.25v-6zM11.25 21v-5.817A5.623 5.623 0 016.375 18a.75.75 0 010-1.5 4.126 4.126 0 004.108-3.75H1.5v6A2.25 2.25 0 003.75 21h7.5z" />
         <path d="M11.085 10.354c.03.297.038.575.036.805a7.484 7.484 0 01-.805-.036c-.833-.084-1.677-.325-2.195-.843a1.5 1.5 0 012.122-2.12c.517.517.759 1.36.842 2.194zM12.877 10.354c-.03.297-.038.575-.036.805.23.002.508-.006.805-.036.833-.084 1.677-.325 2.195-.843A1.5 1.5 0 0013.72 8.16c-.518.518-.76 1.362-.843 2.194z" />
@@ -908,7 +917,8 @@ export const lstFeatures = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400"
+        style={{ width: "50px" }}
+        className="mb-2 text-gray-500 dark:text-gray-400"
       >
         <path d="M9.375 3a1.875 1.875 0 000 3.75h1.875v4.5H3.375A1.875 1.875 0 011.5 9.375v-.75c0-1.036.84-1.875 1.875-1.875h3.193A3.375 3.375 0 0112 2.753a3.375 3.375 0 015.432 3.997h3.943c1.035 0 1.875.84 1.875 1.875v.75c0 1.036-.84 1.875-1.875 1.875H12.75v-4.5h1.875a1.875 1.875 0 10-1.875-1.875V6.75h-1.5V4.875C11.25 3.839 10.41 3 9.375 3zM11.25 12.75H3v6.75a2.25 2.25 0 002.25 2.25h6v-9zM12.75 12.75v9h6.75a2.25 2.25 0 002.25-2.25v-6.75h-9z" />
       </svg>
@@ -924,7 +934,8 @@ export const lstFeatures = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400"
+        style={{ width: "50px" }}
+        className="mb-2 text-gray-500 dark:text-gray-400"
       >
         <path d="M11.25 3v4.046a3 3 0 00-4.277 4.204H1.5v-6A2.25 2.25 0 013.75 3h7.5zM12.75 3v4.011a3 3 0 014.239 4.239H22.5v-6A2.25 2.25 0 0020.25 3h-7.5zM22.5 12.75h-8.983a4.125 4.125 0 004.108 3.75.75.75 0 010 1.5 5.623 5.623 0 01-4.875-2.817V21h7.5a2.25 2.25 0 002.25-2.25v-6zM11.25 21v-5.817A5.623 5.623 0 016.375 18a.75.75 0 010-1.5 4.126 4.126 0 004.108-3.75H1.5v6A2.25 2.25 0 003.75 21h7.5z" />
         <path d="M11.085 10.354c.03.297.038.575.036.805a7.484 7.484 0 01-.805-.036c-.833-.084-1.677-.325-2.195-.843a1.5 1.5 0 012.122-2.12c.517.517.759 1.36.842 2.194zM12.877 10.354c-.03.297-.038.575-.036.805.23.002.508-.006.805-.036.833-.084 1.677-.325 2.195-.843A1.5 1.5 0 0013.72 8.16c-.518.518-.76 1.362-.843 2.194z" />
@@ -1098,11 +1109,4 @@ export const lstFAQs = [
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi expedita repellat quisquam rem reiciendis natus dicta doloribus, nihil error maxime quam qui aspernatur saepe voluptate!",
   },
-];
-
-export const lstProductTabs = [
-  "Electrical Contact Bar",
-  "Electro Mechanic Warp Stop Motion",
-  "Serrated Bars",
-  "Drop Pin",
 ];
