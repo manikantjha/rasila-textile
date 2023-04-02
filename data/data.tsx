@@ -1,3 +1,5 @@
+export const companyName = "SARDARJI";
+
 export const lstNavBarMenu = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "About", path: "/about" },

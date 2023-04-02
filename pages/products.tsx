@@ -1,7 +1,6 @@
 import ProductsMain from "@/components/products/ProductsMain";
 import Layout from "@/layout/Layout";
 import Head from "next/head";
-import React from "react";
 
 export default function Products() {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import Row from "../common/row/Row";
 
 export default function AboutRow() {

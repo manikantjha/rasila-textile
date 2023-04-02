@@ -1,8 +1,8 @@
 import { lstFAQs } from "@/data/data";
-import ContainerWrapper from "../common/ContainerWrapper";
-import Accordion from "../common/accordion/Accordion";
 import { useState } from "react";
+import ContainerWrapper from "../common/ContainerWrapper";
 import Title from "../common/Title";
+import Accordion from "../common/accordion/Accordion";
 
 export default function FAQsMain() {
   const [expanded, setExpanded] = useState(0);
