@@ -1,22 +1,19 @@
-import HomeMain from "@/components/home/HomeMain";
+import FAQsMain from "@/components/faqs/FAQsMain";
 import Layout from "@/layout/Layout";
-import { Inter } from "next/font/google";
 import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function FAQs() {
   return (
     <>
       <Head>
-        <title>Rasila Textile</title>
-        <meta name="description" content="Home page" />
+        <title>FAQs</title>
+        <meta name="description" content="FAQs page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <main className="">
-          <HomeMain />
+          <FAQsMain />
         </main>
       </Layout>
     </>
