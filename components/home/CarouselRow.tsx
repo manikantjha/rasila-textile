@@ -1,8 +1,11 @@
+import { objProducts } from "@/data/data";
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import ProductCard from "./productsRow/ProductCard";
-import { objProducts } from "@/data/data";
+import Modal from "../common/Modal";
+import ProductCard, { IProduct } from "./productsRow/ProductCard";
+import ProductDetailCard from "../products/ProductDetailCard";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -69,6 +72,9 @@ function SamplePrevArrow(props: any) {
 }
 
 export default function CarouselRow() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -80,16 +86,15 @@ export default function CarouselRow() {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -117,10 +122,24 @@ export default function CarouselRow() {
             ...objProducts.dropPins,
           ].map((item, index) => (
             <div key={index} className="h-full w-full px-2">
-              <ProductCard objProduct={item} />
+              <ProductCard
+                objProduct={item}
+                setIsOpen={setIsOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             </div>
           ))}
         </Slider>
+        {isOpen && selectedProduct && (
+          <Modal
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            title="Product Details"
+            renderContent={() => (
+              <ProductDetailCard objProduct={selectedProduct} />
+            )}
+          />
+        )}
       </div>
     </div>
   );

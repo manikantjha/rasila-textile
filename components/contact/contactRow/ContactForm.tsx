@@ -3,6 +3,7 @@ import Card from "@/components/common/Card";
 export default function ContactForm() {
   return (
     <Card>
+      <p className="mb-4 text-3xl  text-gray-700">Enquiry Form</p>
       <form className="grid grid-cols-1 gap-4">
         <div className="">
           <label

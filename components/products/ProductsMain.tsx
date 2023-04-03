@@ -5,9 +5,14 @@ import { useState } from "react";
 import Title from "../common/Title";
 import TabContentContainer from "../common/tabs/TabContentContainer";
 import ProductCard from "../home/productsRow/ProductCard";
+import Modal from "../common/Modal";
+import ProductDetailCard from "./ProductDetailCard";
+import { IProduct } from "../home/productsRow/ProductCard";
 
 export default function ProductsMain() {
   const [activeTab, setActiveTab] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
   function renderActiveTab() {
     if (activeTab === 1) {
@@ -19,7 +24,12 @@ export default function ProductsMain() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {objProducts.electroMechanicWarpStopMotions.map((item, index) => (
-              <ProductCard key={index} objProduct={item} />
+              <ProductCard
+                key={index}
+                objProduct={item}
+                setIsOpen={setIsOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             ))}
           </div>
         </TabContentContainer>
@@ -31,7 +41,12 @@ export default function ProductsMain() {
           <Title title="Serrated Bars" className="!text-left" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {objProducts.serratedBars.map((item, index) => (
-              <ProductCard key={index} objProduct={item} />
+              <ProductCard
+                key={index}
+                objProduct={item}
+                setIsOpen={setIsOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             ))}
           </div>
         </TabContentContainer>
@@ -43,7 +58,12 @@ export default function ProductsMain() {
           <Title title="Drop Pin" className="!text-left" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {objProducts.dropPins.map((item, index) => (
-              <ProductCard key={index} objProduct={item} />
+              <ProductCard
+                key={index}
+                objProduct={item}
+                setIsOpen={setIsOpen}
+                setSelectedProduct={setSelectedProduct}
+              />
             ))}
           </div>
         </TabContentContainer>
@@ -55,7 +75,12 @@ export default function ProductsMain() {
         <Title title="Electrical Contact Bar" className="!text-left" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {objProducts.electricalContactBars.map((item, index) => (
-            <ProductCard key={index} objProduct={item} />
+            <ProductCard
+              key={index}
+              objProduct={item}
+              setIsOpen={setIsOpen}
+              setSelectedProduct={setSelectedProduct}
+            />
           ))}
         </div>
       </TabContentContainer>
@@ -70,6 +95,16 @@ export default function ProductsMain() {
         setActiveTab={setActiveTab}
         renderActiveTab={renderActiveTab}
       />
+      {isOpen && selectedProduct && (
+        <Modal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          title="Product Details"
+          renderContent={() => (
+            <ProductDetailCard objProduct={selectedProduct} />
+          )}
+        />
+      )}
     </ContainerWrapper>
   );
 }

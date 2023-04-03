@@ -8,7 +8,7 @@ interface ICard {
 export default function Card(props: ICard) {
   return (
     <div
-      className={`rounded-lg bg-white border p-6 overflow-hidden ${
+      className={`rounded-lg bg-white border p-4 md:p-6 overflow-hidden ${
         props.className ? props.className : ""
       }`}
     >
