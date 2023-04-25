@@ -11,7 +11,7 @@ interface IModal {
 export default function Modal(props: IModal) {
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 overflow-x-hidden overflow-y-auto h-full bg-[rgba(0,0,0,0.5)]"
+      className="fixed top-0 left-0 right-0 bottom-0 overflow-x-hidden overflow-y-auto h-full bg-[rgba(0,0,0,0.75)]"
       style={{ zIndex: 200000 }}
     >
       <div className="relative w-full h-full p-4 flex flex-col items-center justify-center">
