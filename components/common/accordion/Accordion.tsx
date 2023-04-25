@@ -21,13 +21,7 @@ export default function Accordion(props: IAccordion) {
           type="button"
           className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border ${
             props.index !== props.listLength - 1 ? "border-b-0" : "border-b"
-          } border-gray-200 ${
-            props.index === 0 ? "rounded-t-xl" : "rounded-t-none"
-          } ${
-            props.index === props.listLength - 1 && !isExpanded
-              ? "rounded-b-xl"
-              : "rounded-b-none"
-          } focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800`}
+          } border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100`}
           onClick={() => props.setExpanded(props.index)}
         >
           <span className="flex items-center">
@@ -65,15 +59,9 @@ export default function Accordion(props: IAccordion) {
         <div
           className={`p-5 border ${
             props.index !== props.listLength - 1 ? "border-b-0" : "border-b"
-          } ${
-            props.index === props.listLength - 1
-              ? "rounded-b-xl"
-              : "rounded-b-none"
-          } font-light border-gray-200 dark:border-gray-700 dark:bg-gray-900`}
+          } font-light border-gray-200`}
         >
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            {props.objAccordion.answer}
-          </p>
+          <p className="mb-2 text-gray-500">{props.objAccordion.answer}</p>
         </div>
       </div>
     </div>

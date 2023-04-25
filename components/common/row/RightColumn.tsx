@@ -14,14 +14,14 @@ export default function RightColumn(props: IRightColumn) {
   }
   return (
     <div
-      className={`grid grid-rows-[auto_1fr] h-full ${
+      className={`grid grid-rows-[auto_1fr] h-auto ${
         props.rightColumnContainerClassName
           ? props.rightColumnContainerClassName
           : ""
       }`}
     >
       <h3 className="text-4xl mb-6">{props.title}</h3>
-      <p>{props.description}</p>
+      <p className="text-gray-500">{props.description}</p>
     </div>
   );
 }

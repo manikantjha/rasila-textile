@@ -48,7 +48,7 @@ export default function Row(props: IRow) {
     <ContainerWrapper
       containerWrapperClassName={props.containerWrapperClassName}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center">
         {renderColumns()}
       </div>
     </ContainerWrapper>

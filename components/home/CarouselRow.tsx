@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import Modal from "../common/Modal";
 import ProductCard, { IProduct } from "./productsRow/ProductCard";
 import ProductDetailCard from "../products/ProductDetailCard";
+import Link from "next/link";
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
@@ -112,7 +113,7 @@ export default function CarouselRow() {
   };
 
   return (
-    <div className="bg-gray-100 h-[65vh] md:h-[50vh] p-2 flex items-center justify-center">
+    <div className="bg-white h-[65vh] p-2 flex items-center justify-center">
       <div className="h-fit container mx-auto">
         <Slider {...settings}>
           {[
@@ -140,6 +141,30 @@ export default function CarouselRow() {
             )}
           />
         )}
+        <div className="my-6">
+          <Link
+            href="/products"
+            className="items-center mx-auto bg-gray-100 text-primary font-bold w-fit py-3 px-6 hover:bg-gray-200 flex !mt-12"
+          >
+            See All Products
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 ml-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                />
+              </svg>
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

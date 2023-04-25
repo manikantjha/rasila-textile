@@ -16,9 +16,9 @@ export default function TabItem(props: ITabItem) {
       <span
         className={`inline-block p-2 lg:p-4 border-b-2 ${
           props.index === props.activeTab
-            ? "border-amber-500"
+            ? "bg-primary text-white"
             : "border-transparent"
-        } rounded-t-lg hover:text-gray-600 lg:hover:border-gray-300`}
+        } lg:hover:border-gray-300`}
       >
         {props.title}
       </span>
