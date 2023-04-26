@@ -10,15 +10,15 @@ interface ITabItem {
 export default function TabItem(props: ITabItem) {
   return (
     <li
-      className="mr-2 cursor-pointer"
+      className="mr-0 cursor-pointer flex-shrink-0 w-fit"
       onClick={() => props.setActiveTab(props.index)}
     >
       <span
-        className={`inline-block p-2 lg:p-4 border-b-2 ${
+        className={`inline-block p-3 lg:p-4 border-b-2 w-full ${
           props.index === props.activeTab
-            ? "bg-primary text-white"
+            ? "bg-accent text-gray-700 border-accent lg:hover:border-primary"
             : "border-transparent"
-        } lg:hover:border-gray-300`}
+        } lg:hover:border-primary`}
       >
         {props.title}
       </span>

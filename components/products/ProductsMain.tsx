@@ -88,13 +88,14 @@ export default function ProductsMain() {
   }
 
   return (
-    <ContainerWrapper containerWrapperClassName="bg-gray-50">
+    <>
       <Tabs
         lstTabs={lstProductTabs}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         renderActiveTab={renderActiveTab}
       />
+
       {isOpen && selectedProduct && (
         <Modal
           isOpen={isOpen}
@@ -105,6 +106,6 @@ export default function ProductsMain() {
           )}
         />
       )}
-    </ContainerWrapper>
+    </>
   );
 }

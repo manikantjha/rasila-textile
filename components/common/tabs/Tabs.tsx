@@ -1,5 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction, useState } from "react";
 import TabItem from "./TabItem";
+import ContainerWrapper from "../ContainerWrapper";
 
 interface ITabs {
   lstTabs: string[];
@@ -11,22 +12,24 @@ interface ITabs {
 export default function Tabs(props: ITabs) {
   return (
     <>
-      <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200">
-        <ul className="flex flex-wrap -mb-px">
-          {props.lstTabs.map((item, index) => (
-            <TabItem
-              key={index}
-              title={item}
-              activeTab={props.activeTab}
-              setActiveTab={props.setActiveTab}
-              index={index}
-            />
-          ))}
-        </ul>
+      <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 sticky top-[60px] lg:top-[72px] bg-white shadow-md">
+        <div className="container mx-auto !px-0">
+          <ul className="flex flex-nowrap flex-shrink-0 w-full overflow-x-auto lg:overflow-x-hidden">
+            {props.lstTabs.map((item, index) => (
+              <TabItem
+                key={index}
+                title={item}
+                activeTab={props.activeTab}
+                setActiveTab={props.setActiveTab}
+                index={index}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
-      <div>
+      <ContainerWrapper innerWrapperClassName="!py-2">
         <>{props.renderActiveTab()}</>
-      </div>
+      </ContainerWrapper>
     </>
   );
 }

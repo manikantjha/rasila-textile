@@ -18,13 +18,13 @@ export default function ProductDetailCard(props: IProductDetail) {
               alt="product image"
             />
           </div>
-          <div className="p-4 grid grid-rows-[auto_auto] gap-4">
+          <div className="p-4 grid grid-rows-[auto_auto] gap-2">
             <a href="#">
-              <h3 className="text-xl font-semibold tracking-tight text-gray-900">
+              <h3 className="text-xl font-bold text-gray-900">
                 {props.objProduct?.title}
               </h3>
             </a>
-            <span className="text-xl font-bold text-gray-900">
+            <span className="text-xl font-semibold text-primary">
               {props.objProduct?.priceRange}
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function ProductDetailCard(props: IProductDetail) {
                     } ${index === 0 && "border-t"}`}
                   >
                     <td className="px-6 py-2 font-bold">{item.FIELD1}</td>
-                    <td className="px-6 py-2">{item.FIELD2}</td>
+                    <td className="px-6 py-2 text-clip">{item.FIELD2}</td>
                   </tr>
                 ))}
               </tbody>
