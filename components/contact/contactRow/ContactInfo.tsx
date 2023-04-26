@@ -53,7 +53,7 @@ export default function ContactInfo() {
             <a
               aria-label="Chat on WhatsApp"
               href="https://wa.me/919737259259"
-              className=""
+              className="block mt-1"
             >
               <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.svg" />
             </a>
