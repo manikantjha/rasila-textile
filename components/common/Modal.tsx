@@ -39,7 +39,7 @@ export default function Modal(props: IModal) {
           </button>
         </div>
         <div className="bg-white w-full max-w-4xl">
-          <div className="p-4 max-h-[70vh] md:max-h-[600px] overflow-y-auto">
+          <div className="p-4 max-h-[70vh] md:max-h-[600px] overflow-y-scroll">
             {props.renderContent ? props.renderContent() : <></>}
           </div>
 
