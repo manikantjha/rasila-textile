@@ -1,11 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Button from "./Button";
+
 interface IHero {
   imgSrc: string;
   imgAlt: string;
   hasContent?: boolean;
   title?: string;
   description?: string;
+  btnText?: string;
+  onClick?: () => void;
 }
 
 export default function Hero(props: IHero) {
@@ -26,6 +30,11 @@ export default function Hero(props: IHero) {
             <p className="text-white text-lg md:text-2xl">
               {props.description}
             </p>
+            {props.onClick && (
+              <Button className="mt-10 !w-fit mx-auto" onClick={props.onClick}>
+                {props.btnText}
+              </Button>
+            )}
           </div>
         </>
       )}

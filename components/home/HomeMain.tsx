@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import Hero from "../common/Hero";
 import ContactRow from "../contact/contactRow/ContactRow";
 import CarouselRow from "./CarouselRow";
@@ -6,6 +7,7 @@ import FiguresRow from "./figuresRow/FiguresRow";
 import TestimonialRow from "./testimonialsRow/TestimonialsRow";
 
 export default function HomeMain() {
+  const router = useRouter();
   return (
     <>
       <Hero
@@ -14,6 +16,8 @@ export default function HomeMain() {
         title="SARDARJI"
         imgAlt=""
         description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ab ducimus ullam laudantium suscipit voluptates."
+        onClick={() => router.push("/contact")}
+        btnText="Contact Us"
       />
       <CarouselRow />
       <FeaturesRow />
