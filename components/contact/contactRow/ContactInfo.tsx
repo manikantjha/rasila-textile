@@ -49,6 +49,15 @@ export default function ContactInfo() {
             </svg>
             +91 97372 59259
           </div>
+          <div className="flex">
+            <a
+              aria-label="Chat on WhatsApp"
+              href="https://wa.me/919737259259"
+              className=""
+            >
+              <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.svg" />
+            </a>
+          </div>
           {/* <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

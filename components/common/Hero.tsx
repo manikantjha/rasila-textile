@@ -31,9 +31,21 @@ export default function Hero(props: IHero) {
               {props.description}
             </p>
             {props.onClick && (
-              <Button className="mt-10 !w-fit mx-auto" onClick={props.onClick}>
-                {props.btnText}
-              </Button>
+              // <Button className="mt-10 !w-fit mx-auto" onClick={props.onClick}>
+              //   {props.btnText}
+              // </Button>
+              <div className="flex justify-center mt-10">
+                <a
+                  aria-label="Chat on WhatsApp"
+                  href="https://wa.me/919737259259"
+                  className=""
+                >
+                  <img
+                    alt="Chat on WhatsApp"
+                    src="WhatsAppButtonGreenSmall.svg"
+                  />
+                </a>
+              </div>
             )}
           </div>
         </>
