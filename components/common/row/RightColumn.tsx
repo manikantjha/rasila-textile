@@ -20,7 +20,7 @@ export default function RightColumn(props: IRightColumn) {
           : ""
       }`}
     >
-      <h3 className="text-4xl mb-6">{props.title}</h3>
+      <h3 className="text-4xl mb-4">{props.title}</h3>
       <p className="text-gray-500">{props.description}</p>
     </div>
   );
