@@ -6,7 +6,6 @@ import { sendContactForm } from "@/services/api";
 import { IContactForm } from "@/types/contact";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import { useAlert } from "react-alert";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 
@@ -33,7 +32,6 @@ export default function ContactForm(props: IContactFormProps) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const alert = useAlert();
 
   const {
     register,
