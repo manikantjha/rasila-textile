@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Card from "../common/Card";
 import ContactForm from "../contact/contactRow/ContactForm";
 import { IProduct } from "../home/productsRow/ProductCard";
@@ -50,7 +51,7 @@ export default function ProductDetailCard(props: IProductDetail) {
         </div>
       </Card>
       <div>
-        <ContactForm />
+        <ContactForm objProduct={props.objProduct} />
       </div>
     </div>
   );
