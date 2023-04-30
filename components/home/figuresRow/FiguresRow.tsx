@@ -13,7 +13,7 @@ export default function FiguresRow() {
             key={item.id}
             className="flex flex-col items-center justify-center"
           >
-            <dt className="mb-2 text-2xl font-bold text-primary">
+            <dt className="mb-2 text-4xl font-bold text-primary">
               {item.figure}
             </dt>
             <dd className="text-gray-500">{item.description}</dd>
