@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Button from "@/components/common/Button";
 import Card from "@/components/common/Card";
 import Modal from "@/components/common/Modal";
@@ -5,7 +6,7 @@ import { IProduct } from "@/components/home/productsRow/ProductCard";
 import { sendContactForm } from "@/services/api";
 import { IContactForm } from "@/types/contact";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as yup from "yup";
 
@@ -26,6 +27,7 @@ const schema = yup
 
 interface IContactFormProps {
   objProduct?: IProduct;
+  setIsOpen?: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function ContactForm(props: IContactFormProps) {
@@ -51,10 +53,10 @@ export default function ContactForm(props: IContactFormProps) {
   const onSubmit: SubmitHandler<IContactForm> = async (data, e) => {
     setLoading(true);
     try {
-      await sendContactForm({
-        ...data,
-        productName: props.objProduct?.title || "",
-      });
+      // await sendContactForm({
+      //   ...data,
+      //   productName: props.objProduct?.title || "",
+      // });
       setLoading(false);
       setError("");
       setIsOpen(true);
@@ -254,11 +256,16 @@ export default function ContactForm(props: IContactFormProps) {
               </div>
             );
           }}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          handleClose={() => {
+            setIsOpen(false);
+            props.setIsOpen && props.setIsOpen(false);
+          }}
           renderActions={() => (
             <Button
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                props.setIsOpen && props.setIsOpen(false);
+              }}
               className="w-full lg:w-[200px] mx-auto"
             >
               Ok

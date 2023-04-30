@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import { Dispatch, SetStateAction } from "react";
 import Card from "../common/Card";
 import ContactForm from "../contact/contactRow/ContactForm";
 import { IProduct } from "../home/productsRow/ProductCard";
 
 interface IProductDetail {
   objProduct: IProduct;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function ProductDetailCard(props: IProductDetail) {
@@ -51,7 +53,10 @@ export default function ProductDetailCard(props: IProductDetail) {
         </div>
       </Card>
       <div>
-        <ContactForm objProduct={props.objProduct} />
+        <ContactForm
+          objProduct={props.objProduct}
+          setIsOpen={props.setIsOpen}
+        />
       </div>
     </div>
   );

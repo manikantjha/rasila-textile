@@ -98,11 +98,13 @@ export default function ProductsMain() {
 
       {isOpen && selectedProduct && (
         <Modal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
           title="Product Details"
+          handleClose={() => setIsOpen(false)}
           renderContent={() => (
-            <ProductDetailCard objProduct={selectedProduct} />
+            <ProductDetailCard
+              objProduct={selectedProduct}
+              setIsOpen={setIsOpen}
+            />
           )}
         />
       )}

@@ -1,9 +1,8 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 
 interface IModal {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
   title: string;
+  handleClose: () => void;
   renderContent?: () => ReactNode;
   renderActions?: () => ReactNode;
 }
@@ -20,7 +19,7 @@ export default function Modal(props: IModal) {
           <button
             type="button"
             className="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 text-sm p-1.5 ml-auto inline-flex items-center rounded-full"
-            onClick={() => props.setIsOpen(false)}
+            onClick={props.handleClose}
           >
             <svg
               aria-hidden="true"
