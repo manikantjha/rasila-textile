@@ -37,7 +37,7 @@ function generateEmailContent(data: IData) {
     <body>
     <div style="padding:24px; font-size:1.15rem;">
     <h2 style="margin-bottom: 16px; text-align: center;">New Enquiry from ${data.name}</h2>
-    <table style="border: solid 1px #BDBDBD; border-collapse: collapse; width: 50%; margin: auto;">${htmlData}</table>
+    <table style="border: solid 1px #BDBDBD; border-collapse: collapse; width: auto; margin: auto;">${htmlData}</table>
     <div>
     </body>
     </html>
@@ -52,7 +52,7 @@ export default async function handler(
   if (req.method === "POST") {
     const data = req.body;
     if (!data.name || !data.email || !data.phone || !data.message) {
-      res.status(400).json({ message: "Bad Request" });
+      return res.status(400).json({ message: "Bad Request" });
     }
 
     try {
@@ -61,10 +61,10 @@ export default async function handler(
         ...generateEmailContent(data),
         subject: data.name,
       });
-      res.status(200).json({ message: "Message sent successfully!" });
+      return res.status(200).json({ message: "Message sent successfully!" });
     } catch (error: any) {
       console.log(error);
-      res.status(400).json({ message: error.message });
+      return res.status(400).json({ message: error.message });
     }
   }
 
