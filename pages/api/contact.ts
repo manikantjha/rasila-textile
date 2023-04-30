@@ -21,7 +21,7 @@ function generateEmailContent(data: IData) {
   }, "");
 
   const htmlData = Object.entries(data).reduce((str, [key, value]) => {
-    return (str += `<h2>${CONTACT_MESSAGE_FIELDS[key]}:</h2> \n<p>${value}</p>\n\n`);
+    return (str += `<tr style="border: solid 1px gray;"><td style="font-weight:bold; border: solid 1px #BDBDBD; padding: 4px 6px;">${CONTACT_MESSAGE_FIELDS[key]}</td><td style="border: solid 1px #BDBDBD; padding: 4px 6px;">${value}</td>`);
   }, "");
 
   return {
@@ -34,7 +34,12 @@ function generateEmailContent(data: IData) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Mail</title>
     </head>
-    <body>${htmlData}</body>
+    <body>
+    <div style="padding:24px; font-size:1.15rem;">
+    <h2 style="margin-bottom: 16px; text-align: center;">New Enquiry from ${data.name}</h2>
+    <table style="border: solid 1px #BDBDBD; border-collapse: collapse; width: 50%; margin: auto;">${htmlData}</table>
+    <div>
+    </body>
     </html>
     `,
   };
