@@ -53,10 +53,10 @@ export default function ContactForm(props: IContactFormProps) {
   const onSubmit: SubmitHandler<IContactForm> = async (data, e) => {
     setLoading(true);
     try {
-      // await sendContactForm({
-      //   ...data,
-      //   productName: props.objProduct?.title || "",
-      // });
+      await sendContactForm({
+        ...data,
+        productName: props.objProduct?.title || "",
+      });
       setLoading(false);
       setError("");
       setIsOpen(true);

@@ -54,7 +54,7 @@ export const objProducts = {
         "Serreted / Unserreted",
         "Interrupted / Non - Interrupted",
       ],
-      priceRange: <>&#8377;1000 - &#8377;4000 / Piece</>,
+      priceRange: <>&#8377;1000 - &#8377;4000 / Piece (Approx.)</>,
     },
     {
       id: 2,
