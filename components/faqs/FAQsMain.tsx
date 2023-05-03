@@ -3,7 +3,7 @@ import { useState } from "react";
 import ContainerWrapper from "../common/ContainerWrapper";
 import Title from "../common/Title";
 import Accordion from "../common/accordion/Accordion";
-import CarouselRow from "../home/CarouselRow";
+import CarouselRow from "../home/carouselRow/CarouselRow";
 
 export default function FAQsMain() {
   const [expanded, setExpanded] = useState(0);

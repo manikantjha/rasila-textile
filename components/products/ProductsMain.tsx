@@ -1,13 +1,11 @@
 import { lstProductTabs, objProducts } from "@/data/data";
-import ContainerWrapper from "../common/ContainerWrapper";
-import Tabs from "../common/tabs/Tabs";
 import { useState } from "react";
+import Modal from "../common/Modal";
 import Title from "../common/Title";
 import TabContentContainer from "../common/tabs/TabContentContainer";
-import ProductCard from "../home/productsRow/ProductCard";
-import Modal from "../common/Modal";
+import Tabs from "../common/tabs/Tabs";
+import ProductCard, { IProduct } from "../home/productsRow/ProductCard";
 import ProductDetailCard from "./ProductDetailCard";
-import { IProduct } from "../home/productsRow/ProductCard";
 
 export default function ProductsMain() {
   const [activeTab, setActiveTab] = useState(0);

@@ -8,7 +8,7 @@ export default function FiguresRow() {
     <ContainerWrapper containerWrapperClassName="bg-white">
       <Title title="Let our numbers do the talking" />
       <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {lstFigures.map((item, index) => (
+        {lstFigures.map((item) => (
           <Card
             key={item.id}
             className="flex flex-col items-center justify-center"

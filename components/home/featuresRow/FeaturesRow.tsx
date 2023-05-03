@@ -1,7 +1,7 @@
 import ContainerWrapper from "@/components/common/ContainerWrapper";
 import Title from "@/components/common/Title";
-import FeatureCard from "./FeatureCard";
 import { lstFeatures } from "@/data/data";
+import FeatureCard from "./FeatureCard";
 
 export default function FeaturesRow() {
   return (

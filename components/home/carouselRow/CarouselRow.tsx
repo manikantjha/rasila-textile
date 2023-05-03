@@ -1,21 +1,20 @@
 import { objProducts } from "@/data/data";
 import { useState } from "react";
-import Slider from "react-slick";
+import Slider, { CustomArrowProps, Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Modal from "../common/Modal";
-import ProductCard, { IProduct } from "./productsRow/ProductCard";
-import ProductDetailCard from "../products/ProductDetailCard";
-import Link from "next/link";
-import ContainerWrapper from "../common/ContainerWrapper";
+import ContainerWrapper from "../../common/ContainerWrapper";
+import Modal from "../../common/Modal";
+import ProductDetailCard from "../../products/ProductDetailCard";
+import ProductCard, { IProduct } from "../productsRow/ProductCard";
+import SeeAllLinkBtn from "../../common/SeeAllLinkBtn";
 
-function SampleNextArrow(props: any) {
-  const { className, style, onClick } = props;
+function NextArrow(props: CustomArrowProps) {
   return (
     <div
       className="bg-[rgba(0,0,0,0.35)] rounded-full p-1 cursor-pointer"
       style={{
-        ...style,
+        ...props.style,
         display: "block",
         position: "absolute",
         top: "50%",
@@ -23,7 +22,7 @@ function SampleNextArrow(props: any) {
         transform: "translate(0, -50%)",
         zIndex: 100,
       }}
-      onClick={onClick}
+      onClick={props.onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,13 +40,12 @@ function SampleNextArrow(props: any) {
   );
 }
 
-function SamplePrevArrow(props: any) {
-  const { className, style, onClick } = props;
+function PrevArrow(props: CustomArrowProps) {
   return (
     <div
       className="bg-[rgba(0,0,0,0.35)] rounded-full p-1 cursor-pointer"
       style={{
-        ...style,
+        ...props.style,
         display: "block",
         position: "absolute",
         top: "50%",
@@ -55,7 +53,7 @@ function SamplePrevArrow(props: any) {
         transform: "translate(0, -50%)",
         zIndex: 100,
       }}
-      onClick={onClick}
+      onClick={props.onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -73,49 +71,49 @@ function SamplePrevArrow(props: any) {
   );
 }
 
+const sliderSettings: Settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  autoplay: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 export default function CarouselRow() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    autoplay: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <ContainerWrapper>
-      <Slider {...settings}>
+      <Slider {...sliderSettings}>
         {[
           ...objProducts.electricalContactBars,
           ...objProducts.electroMechanicWarpStopMotions,
@@ -144,28 +142,7 @@ export default function CarouselRow() {
         />
       )}
       <div className="my-6">
-        <Link
-          href="/products"
-          className="items-center mx-auto bg-gray-100 text-primary font-bold w-fit py-3 px-6 hover:bg-gray-200 flex !mt-12"
-        >
-          See All Products
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-5 h-5 ml-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-              />
-            </svg>
-          </span>
-        </Link>
+        <SeeAllLinkBtn href="/products" btnText="See All Products" />
       </div>
     </ContainerWrapper>
   );

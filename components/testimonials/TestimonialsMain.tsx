@@ -1,8 +1,8 @@
 import { lstTestimonials } from "@/data/data";
 import ContainerWrapper from "../common/ContainerWrapper";
 import Title from "../common/Title";
+import CarouselRow from "../home/carouselRow/CarouselRow";
 import TestimonialCard from "../home/testimonialsRow/TestimonialCard";
-import CarouselRow from "../home/CarouselRow";
 
 export default function TestimonialsMain() {
   return (
