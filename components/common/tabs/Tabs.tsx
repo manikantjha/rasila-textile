@@ -60,7 +60,7 @@ export default function Tabs(props: ITabs) {
           </div>
         </div>
       </div>
-      <ContainerWrapper innerWrapperClassName="!py-2">
+      <ContainerWrapper innerWrapperClassName="!pt-2">
         <>{props.renderActiveTab()}</>
       </ContainerWrapper>
     </>

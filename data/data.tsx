@@ -20,21 +20,18 @@ export const lstNavBarMenu = [
 export const objHomePageHero = {
   hasContent: true,
   title: "SARDARJI",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ab ducimus ullam laudantium suscipit voluptates.",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   imgSrc:
     "https://images.unsplash.com/photo-1526290766257-c015850e4629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
   imgAlt: "Home Page Hero",
   renderBtn: () => (
-    <div className="flex justify-center mt-10">
-      <a
-        aria-label="Chat on WhatsApp"
-        href="https://wa.me/919737259259"
-        className=""
-      >
-        <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.svg" />
-      </a>
-    </div>
+    <a
+      aria-label="Chat on WhatsApp"
+      href="https://wa.me/919737259259"
+      className=""
+    >
+      <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.svg" />
+    </a>
   ),
 };
 
@@ -123,11 +120,19 @@ export const lstFigures = [
 export const objAboutPageHero = {
   hasContent: true,
   title: "ABOUT US",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ab ducimus ullam laudantium suscipit voluptates.",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   imgSrc:
     "https://images.unsplash.com/photo-1569616758526-23def508da5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   imgAlt: "About Us Hero",
+  renderBtn: () => (
+    <a
+      aria-label="Chat on WhatsApp"
+      href="https://wa.me/919737259259"
+      className=""
+    >
+      <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.svg" />
+    </a>
+  ),
 };
 
 export const objFounder = {
