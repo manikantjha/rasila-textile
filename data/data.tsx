@@ -109,7 +109,7 @@ export const lstFeatures = [
 ];
 
 export const lstFigures = [
-  { id: 1, figure: "73+", description: "Lorem, ipsum." },
+  { id: 1, figure: "50,000+", description: "Machines Running It" },
   { id: 2, figure: "100+", description: "Lorem, ipsum." },
   { id: 3, figure: "1000+", description: "Lorem, ipsum." },
   { id: 4, figure: "29+", description: "Lorem, ipsum." },
