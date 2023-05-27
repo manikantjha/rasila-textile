@@ -1253,7 +1253,7 @@ export const objContactInfo = {
           />
         </svg>
       ),
-      value: "Surat, Gujarat",
+      value: "116 Mahek Icon, Sumul Dairy Road, Surat, Gujarat 395008",
     },
   ],
 };
